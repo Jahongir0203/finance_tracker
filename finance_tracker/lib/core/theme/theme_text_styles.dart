@@ -8,10 +8,12 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
   ///SemiBold
   final TextStyle boardingTitle;
   final TextStyle buttonTitle;
+  final TextStyle forgotPassword;
 
   ///Bold
   final TextStyle boardingHeadline;
   final TextStyle splashTitle;
+  final TextStyle authHeader;
 
   static ThemeTextStyles light = ThemeTextStyles(
     splashTitle: TextStyle(
@@ -44,11 +46,24 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       fontWeight: FontWeight.w600,
     ),
 
+    forgotPassword: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      fontFamily: AppLocaleKeys.fontSemiBold,
+      color: AppColors.c6B7580,
+    ),
+
     ///Bold
     boardingHeadline: TextStyle(
       fontWeight: FontWeight.w700,
       color: AppColors.c242D35,
       fontSize: 24,
+      fontFamily: AppLocaleKeys.fontBold,
+    ),
+    authHeader: TextStyle(
+      fontSize: 32,
+      fontWeight: FontWeight.w700,
+      color: AppColors.c242D35,
       fontFamily: AppLocaleKeys.fontBold,
     ),
   );
@@ -83,11 +98,24 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       fontWeight: FontWeight.w600,
     ),
 
+    forgotPassword: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      fontFamily: AppLocaleKeys.fontSemiBold,
+      color: AppColors.cB0B8BF,
+    ),
+
     ///Bold
     boardingHeadline: TextStyle(
       fontWeight: FontWeight.w700,
       color: AppColors.cF5F6F7,
       fontSize: 24,
+      fontFamily: AppLocaleKeys.fontBold,
+    ),
+    authHeader: TextStyle(
+      fontSize: 32,
+      fontWeight: FontWeight.w700,
+      color: AppColors.cF5F6F7,
       fontFamily: AppLocaleKeys.fontBold,
     ),
   );
@@ -98,6 +126,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     required this.boardingHeadline,
     required this.splashTitle,
     required this.buttonTitle,
+    required this.authHeader,
+    required this.forgotPassword,
   });
 
   @override
@@ -107,6 +137,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     TextStyle? boardingTitle,
     TextStyle? boardingHeadline,
     TextStyle? buttonTitle,
+    TextStyle? authHeader,
+    TextStyle? forgotPassword,
   }) {
     return ThemeTextStyles(
       splashTitle: splashTitle ?? this.splashTitle,
@@ -114,6 +146,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       boardingTitle: boardingTitle ?? this.boardingTitle,
       boardingHeadline: boardingHeadline ?? this.boardingHeadline,
       buttonTitle: buttonTitle ?? this.buttonTitle,
+      authHeader: authHeader ?? this.authHeader,
+      forgotPassword: forgotPassword ?? this.forgotPassword,
     );
   }
 
@@ -132,6 +166,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       boardingHeadline:
           TextStyle.lerp(boardingHeadline, other.boardingHeadline, t)!,
       buttonTitle: TextStyle.lerp(buttonTitle, other.buttonTitle, t)!,
+      authHeader: TextStyle.lerp(authHeader, other.authHeader, t)!,
+      forgotPassword: TextStyle.lerp(forgotPassword, other.forgotPassword, t)!,
     );
   }
 }

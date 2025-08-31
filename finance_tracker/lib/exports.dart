@@ -9,3 +9,5 @@ export 'package:get_it/get_it.dart';
 export 'package:flutter_native_splash/flutter_native_splash.dart';
 export 'package:flutter/services.dart';
 export 'features/common/presentation/widgets/widgets.dart';
+export 'package:flutter_svg/svg.dart';
+

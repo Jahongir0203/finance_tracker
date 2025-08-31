@@ -1,10 +1,18 @@
 import '../../../../exports.dart';
 
 class AppButton extends StatelessWidget {
-  const AppButton({super.key, required this.onTap, required this.text});
+  const AppButton({
+    super.key,
+    required this.onTap,
+    required this.text,
+    this.backgroundColor,
+    this.borderColor,
+  });
 
   final VoidCallback onTap;
   final String text;
+  final Color? backgroundColor;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +22,9 @@ class AppButton extends StatelessWidget {
         height: 48,
         width: context.w,
         decoration: BoxDecoration(
+          border: Border.all(color: borderColor ?? AppColors.cTransparent),
           borderRadius: BorderRadius.circular(14),
-          color: AppColors.c0E33F3,
+          color: backgroundColor ?? AppColors.c0E33F3,
           boxShadow: [
             BoxShadow(
               color: AppColors.c000000.newWithOpacity(.2),
