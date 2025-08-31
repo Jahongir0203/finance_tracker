@@ -1,3 +1,5 @@
+import 'package:finance_tracker/core/theme/theme_svgs.dart';
+
 import '../../exports.dart';
 
 extension BuildContextExt on BuildContext {
@@ -16,4 +18,6 @@ extension BuildContextExt on BuildContext {
   ThemeColors get color => Theme.of(this).extension<ThemeColors>()!;
 
   ThemeTextStyles get textStyle => Theme.of(this).extension<ThemeTextStyles>()!;
+
+  ThemeSvgs get appSvgs => Theme.of(this).extension<ThemeSvgs>()!;
 }

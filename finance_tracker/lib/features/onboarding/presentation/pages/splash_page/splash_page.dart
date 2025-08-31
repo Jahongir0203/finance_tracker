@@ -1,3 +1,4 @@
+import 'package:finance_tracker/core/constants/app_locale_keys.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../exports.dart';
@@ -56,9 +57,15 @@ class _SplashPageState extends State<SplashPage>
                   SizedBox(
                     height: 144,
                     width: 144,
-                    child: SvgPicture.asset(AppSvgs.icLogo, fit: BoxFit.cover),
+                    child: SvgPicture.asset(
+                      context.appSvgs.icLogo,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  Text("Monex", style: context.textStyle.splashTitle),
+                  Text(
+                    AppLocaleKeys.monex,
+                    style: context.textStyle.splashTitle,
+                  ),
                 ],
               ),
             ),

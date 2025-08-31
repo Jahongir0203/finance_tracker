@@ -63,6 +63,8 @@ flutter:
     - assets/png/
     - assets/svg/
     - assets/fonts/
+    - assets/svg/light/
+    - assets/svg/dark/
 
   fonts:
     - family: fontBold

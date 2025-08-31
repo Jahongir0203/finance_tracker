@@ -8,3 +8,4 @@ export 'router/app_routes.dart';
 export 'router/route_names.dart';
 export 'services/storage_service.dart';
 export 'theme/theme.dart';
+export 'constants/time_delay_const.dart';
