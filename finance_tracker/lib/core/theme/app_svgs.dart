@@ -6,6 +6,8 @@ abstract class AppLightSvgs {
   static const String icOnBoarding3 = '$baseUrl/ic_onboarding3.svg';
   static const String icPerson = '$baseUrl/ic_person.svg';
   static const String icPassword = '$baseUrl/ic_password.svg';
+  static const String icVisibility = '$baseUrl/ic_visibility.svg';
+  static const String icVisibilityOff = '$baseUrl/ic_visibility_off.svg';
 }
 
 abstract class AppDarkSvgs {
@@ -16,4 +18,6 @@ abstract class AppDarkSvgs {
   static const String icOnBoarding3 = '$baseUrl/ic_onboarding3.svg';
   static const String icPerson = '$baseUrl/ic_person.svg';
   static const String icPassword = '$baseUrl/ic_password.svg';
+  static const String icVisibility = '$baseUrl/ic_visibility.svg';
+  static const String icVisibilityOff = '$baseUrl/ic_visibility_off.svg';
 }

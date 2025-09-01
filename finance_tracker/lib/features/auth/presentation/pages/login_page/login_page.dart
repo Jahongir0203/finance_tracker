@@ -47,13 +47,20 @@ class _LoginPageState extends State<LoginPage> {
                 keyboardType: TextInputType.emailAddress,
                 prefixIconPath: context.appSvgs.icPerson,
                 hintText: AppLocaleKeys.email,
+                validator: (value) {
+                  return ValidatorHelpers.validateEmail(value: value!);
+                },
               ),
               20.verticalSpace,
               AppTextFormField(
+                obscure: true,
                 controller: _passwordController,
                 keyboardType: TextInputType.visiblePassword,
                 prefixIconPath: context.appSvgs.icPassword,
                 hintText: AppLocaleKeys.password,
+                validator: (value) {
+                  return ValidatorHelpers.validatePassword(value: value!);
+                },
               ),
               24.verticalSpace,
               AppButton(onTap: () {}, text: AppLocaleKeys.login),

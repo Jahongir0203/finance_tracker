@@ -7,6 +7,8 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
   final String onBoarding3;
   final String icPerson;
   final String icPassword;
+  final String icVisibility;
+  final String icVisibilityOff;
 
   ThemeSvgs({
     required this.icLogo,
@@ -15,6 +17,8 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     required this.onBoarding3,
     required this.icPerson,
     required this.icPassword,
+    required this.icVisibility,
+    required this.icVisibilityOff,
   });
 
   static ThemeSvgs light = ThemeSvgs(
@@ -24,6 +28,8 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     onBoarding3: AppLightSvgs.icOnBoarding3,
     icPerson: AppLightSvgs.icPerson,
     icPassword: AppLightSvgs.icPassword,
+    icVisibility: AppLightSvgs.icVisibility,
+    icVisibilityOff: AppLightSvgs.icVisibilityOff,
   );
 
   static ThemeSvgs dark = ThemeSvgs(
@@ -33,6 +39,8 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     onBoarding3: AppDarkSvgs.icOnBoarding3,
     icPerson: AppDarkSvgs.icPerson,
     icPassword: AppDarkSvgs.icPassword,
+    icVisibility: AppDarkSvgs.icVisibility,
+    icVisibilityOff: AppDarkSvgs.icVisibilityOff,
   );
 
   @override
@@ -43,6 +51,8 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     String? onBoarding3,
     String? icPerson,
     String? icPassword,
+    String? icvVisibility,
+    String? icVisibilityOff,
   }) {
     return ThemeSvgs(
       icLogo: icLogo ?? this.icLogo,
@@ -51,6 +61,8 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
       onBoarding3: onBoarding3 ?? this.onBoarding3,
       icPerson: icPerson ?? this.icPerson,
       icPassword: icPassword ?? this.icPassword,
+      icVisibility: icVisibility ?? icVisibility,
+      icVisibilityOff: icVisibilityOff ?? this.icVisibilityOff,
     );
   }
 

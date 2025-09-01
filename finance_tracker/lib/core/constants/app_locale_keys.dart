@@ -7,6 +7,7 @@ abstract class AppLocaleKeys {
 
   static const String email = 'Email';
   static const String password = 'Parol';
+  static const String repeatPassword = 'Parolni qayta kiriting';
   static const String login = 'Kirish';
   static const String register = "Ro'yhatdan o'tish";
   static const String strCanNotBeEmpty = "Bu maydon bo'sh bo'lishi mumkin emas";
