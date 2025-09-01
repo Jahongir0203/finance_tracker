@@ -5,6 +5,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
   ///Regular
   final TextStyle boardingBody;
   final TextStyle textField;
+  final TextStyle forgotPasswordTitle;
+  final TextStyle forgotPasswordBody;
 
   ///SemiBold
   final TextStyle boardingTitle;
@@ -37,6 +39,19 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       fontWeight: FontWeight.w400,
       fontFamily: AppLocaleKeys.fontRegular,
       fontSize: 16,
+    ),
+
+    forgotPasswordTitle: TextStyle(
+      fontSize: 36,
+      fontWeight: FontWeight.w400,
+      fontFamily: AppLocaleKeys.fontRegular,
+      color: AppColors.c242D35,
+    ),
+    forgotPasswordBody: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      fontFamily: AppLocaleKeys.fontRegular,
+      color: AppColors.c9BA1A8,
     ),
 
     ///SemiBold
@@ -98,6 +113,18 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       fontFamily: AppLocaleKeys.fontRegular,
       fontSize: 16,
     ),
+    forgotPasswordTitle: TextStyle(
+      fontSize: 36,
+      fontWeight: FontWeight.w400,
+      fontFamily: AppLocaleKeys.fontRegular,
+      color: AppColors.cF5F6F7,
+    ),
+    forgotPasswordBody: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      fontFamily: AppLocaleKeys.fontRegular,
+      color: AppColors.cB0B8BF,
+    ),
 
     ///SemiBold
     boardingTitle: TextStyle(
@@ -144,6 +171,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     required this.authHeader,
     required this.forgotPassword,
     required this.textField,
+    required this.forgotPasswordTitle,
+    required this.forgotPasswordBody,
   });
 
   @override
@@ -156,6 +185,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     TextStyle? authHeader,
     TextStyle? forgotPassword,
     TextStyle? textField,
+    TextStyle? forgotPasswordTitle,
+    TextStyle? forgotPasswordBody,
   }) {
     return ThemeTextStyles(
       splashTitle: splashTitle ?? this.splashTitle,
@@ -166,6 +197,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       authHeader: authHeader ?? this.authHeader,
       forgotPassword: forgotPassword ?? this.forgotPassword,
       textField: textField ?? this.textField,
+      forgotPasswordBody: forgotPasswordBody ?? this.forgotPasswordBody,
+      forgotPasswordTitle: forgotPasswordTitle ?? this.forgotPasswordTitle,
     );
   }
 
@@ -187,6 +220,10 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       authHeader: TextStyle.lerp(authHeader, other.authHeader, t)!,
       forgotPassword: TextStyle.lerp(forgotPassword, other.forgotPassword, t)!,
       textField: TextStyle.lerp(textField, other.textField, t)!,
+      forgotPasswordTitle:
+          TextStyle.lerp(forgotPasswordTitle, other.forgotPasswordTitle, t)!,
+      forgotPasswordBody:
+          TextStyle.lerp(forgotPasswordBody, other.forgotPasswordBody, t)!,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:finance_tracker/features/auth/presentation/pages/forgot_password_page/forgot_password_page.dart';
 import 'package:finance_tracker/features/auth/presentation/pages/login_page/login_page.dart';
 import 'package:finance_tracker/features/auth/presentation/pages/register_page/register_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,6 +28,11 @@ abstract class AppRoutes {
       GoRoute(
         path: Routes.register,
         pageBuilder: (context, state) => CupertinoPage(child: RegisterPage()),
+      ),
+      GoRoute(
+        path: Routes.forgotPassword,
+        pageBuilder:
+            (context, state) => CupertinoPage(child: ForgotPasswordPage()),
       ),
     ],
   );

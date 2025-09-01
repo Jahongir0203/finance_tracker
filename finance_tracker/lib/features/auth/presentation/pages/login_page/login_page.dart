@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: AlignmentGeometry.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {}
+                    context.push(Routes.forgotPassword);
                   },
                   child: Text(
                     "Parolni unutdingizmi?",

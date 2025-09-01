@@ -9,6 +9,7 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
   final String icPassword;
   final String icVisibility;
   final String icVisibilityOff;
+  final String icBack;
 
   ThemeSvgs({
     required this.icLogo,
@@ -19,6 +20,7 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     required this.icPassword,
     required this.icVisibility,
     required this.icVisibilityOff,
+    required this.icBack,
   });
 
   static ThemeSvgs light = ThemeSvgs(
@@ -30,6 +32,7 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     icPassword: AppLightSvgs.icPassword,
     icVisibility: AppLightSvgs.icVisibility,
     icVisibilityOff: AppLightSvgs.icVisibilityOff,
+    icBack: AppLightSvgs.icBack,
   );
 
   static ThemeSvgs dark = ThemeSvgs(
@@ -41,6 +44,7 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     icPassword: AppDarkSvgs.icPassword,
     icVisibility: AppDarkSvgs.icVisibility,
     icVisibilityOff: AppDarkSvgs.icVisibilityOff,
+    icBack: AppDarkSvgs.icBack,
   );
 
   @override
@@ -53,6 +57,7 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
     String? icPassword,
     String? icvVisibility,
     String? icVisibilityOff,
+    String? icBack,
   }) {
     return ThemeSvgs(
       icLogo: icLogo ?? this.icLogo,
@@ -63,6 +68,7 @@ class ThemeSvgs extends ThemeExtension<ThemeSvgs> {
       icPassword: icPassword ?? this.icPassword,
       icVisibility: icVisibility ?? icVisibility,
       icVisibilityOff: icVisibilityOff ?? this.icVisibilityOff,
+      icBack: icBack ?? this.icBack,
     );
   }
 
