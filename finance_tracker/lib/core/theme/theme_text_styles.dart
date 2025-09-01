@@ -4,6 +4,7 @@ import 'package:finance_tracker/exports.dart';
 class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
   ///Regular
   final TextStyle boardingBody;
+  final TextStyle textField;
 
   ///SemiBold
   final TextStyle boardingTitle;
@@ -29,6 +30,13 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       color: AppColors.c6B7580,
       fontSize: 16,
       fontFamily: AppLocaleKeys.fontRegular,
+    ),
+
+    textField: TextStyle(
+      color: AppColors.c242D35,
+      fontWeight: FontWeight.w400,
+      fontFamily: AppLocaleKeys.fontRegular,
+      fontSize: 16,
     ),
 
     ///SemiBold
@@ -84,6 +92,13 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       fontFamily: AppLocaleKeys.fontRegular,
     ),
 
+    textField: TextStyle(
+      color: AppColors.cF5F6F7,
+      fontWeight: FontWeight.w400,
+      fontFamily: AppLocaleKeys.fontRegular,
+      fontSize: 16,
+    ),
+
     ///SemiBold
     boardingTitle: TextStyle(
       fontWeight: FontWeight.w600,
@@ -128,6 +143,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     required this.buttonTitle,
     required this.authHeader,
     required this.forgotPassword,
+    required this.textField,
   });
 
   @override
@@ -139,6 +155,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     TextStyle? buttonTitle,
     TextStyle? authHeader,
     TextStyle? forgotPassword,
+    TextStyle? textField,
   }) {
     return ThemeTextStyles(
       splashTitle: splashTitle ?? this.splashTitle,
@@ -148,6 +165,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       buttonTitle: buttonTitle ?? this.buttonTitle,
       authHeader: authHeader ?? this.authHeader,
       forgotPassword: forgotPassword ?? this.forgotPassword,
+      textField: textField ?? this.textField,
     );
   }
 
@@ -168,6 +186,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       buttonTitle: TextStyle.lerp(buttonTitle, other.buttonTitle, t)!,
       authHeader: TextStyle.lerp(authHeader, other.authHeader, t)!,
       forgotPassword: TextStyle.lerp(forgotPassword, other.forgotPassword, t)!,
+      textField: TextStyle.lerp(textField, other.textField, t)!,
     );
   }
 }

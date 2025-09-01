@@ -20,12 +20,7 @@ class AppTextFormField extends StatelessWidget {
       enabled: true,
       controller: controller,
       keyboardType: keyboardType,
-      style: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        fontFamily: AppLocaleKeys.fontRegular,
-        color: AppColors.cF5F6F7,
-      ),
+      style: context.textStyle.textField,
       decoration: InputDecoration(
         enabled: true,
         hintText: hintText,
@@ -33,10 +28,10 @@ class AppTextFormField extends StatelessWidget {
           height: 24,
           width: 24,
           child: SvgPicture.asset(
-            prefixIconPath!, 
-            fit: BoxFit.cover,
-          ).paddingAll(4),
-        ).paddingOnly(left: 16, right: 8),
+            prefixIconPath!,
+            fit: BoxFit.contain,
+          ).paddingAll(3),
+        ).paddingOnly(left: 16, right: 5),
         contentPadding: context.theme.inputDecorationTheme.contentPadding,
         fillColor: context.theme.inputDecorationTheme.fillColor,
         filled: context.theme.inputDecorationTheme.filled,

@@ -8,15 +8,15 @@ class AuthHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        20.h,
+        20.verticalSpace,
         SizedBox(
           height: 88,
           width: 88,
           child: SvgPicture.asset(context.appSvgs.icLogo, fit: BoxFit.cover),
         ),
-        7.h,
+        7.verticalSpace,
         Text(AppLocaleKeys.monex, style: context.textStyle.authHeader),
-        52.h,
+        52.verticalSpace,
       ],
     );
   }

@@ -1,5 +1,4 @@
 import 'package:finance_tracker/exports.dart';
-import 'package:flutter/cupertino.dart';
 
 abstract class AppColors {
   static const Color cTransparent = Colors.transparent;

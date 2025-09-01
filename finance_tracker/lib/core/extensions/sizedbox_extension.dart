@@ -1,6 +1,6 @@
 import '../../exports.dart';
 
 extension SpaceExtension on num {
-  SizedBox get h => SizedBox(height: toDouble());
-  SizedBox get w => SizedBox(width: toDouble());
+  SizedBox get verticalSpace => SizedBox(height: toDouble());
+  SizedBox get horizontalSpace => SizedBox(width: toDouble());
 }

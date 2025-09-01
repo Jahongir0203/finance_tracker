@@ -1,9 +1,6 @@
-import 'package:finance_tracker/core/constants/app_locale_keys.dart';
-import 'package:finance_tracker/core/constants/time_delay_const.dart';
 import 'package:finance_tracker/features/common/presentation/widgets/app_button.dart';
 import 'package:finance_tracker/features/onboarding/presentation/mixins/onboarding_page_mixin.dart';
 import 'package:finance_tracker/features/onboarding/presentation/pages/onboarding_page/widgets/onboarding_indicator.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../../exports.dart';
 
@@ -17,13 +14,9 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage>
     with OnBoardingPageMixin {
   int currentIndex = 0;
-  late PageController pageController;
+   PageController pageController=PageController();
 
-  @override
-  void initState() {
-    pageController = PageController(initialPage: 0);
-    super.initState();
-  }
+
 
   @override
   void dispose() {
@@ -57,8 +50,8 @@ class _OnboardingPageState extends State<OnboardingPage>
                     children: [
                       const SizedBox(height: 165),
                       SizedBox(
-                        height: 295,
-                        width: 295,
+                        height: 226,
+                        width: 250,
                         child: SvgPicture.asset(
                           data.svgPath,
                           fit: BoxFit.cover,
@@ -120,14 +113,10 @@ class _OnboardingPageState extends State<OnboardingPage>
                   AppButton(
                     onTap: () {
                       if (currentIndex != list.length - 1) {
-                        setState(() {
-                          currentIndex += 1;
-                          pageController.animateToPage(
-                            currentIndex,
-                            duration: TimeDelayConst.durationMill300,
-                            curve: Curves.easeInOut,
-                          );
-                        });
+                        pageController.nextPage(
+                          duration: TimeDelayConst.durationMill300,
+                          curve: Curves.easeIn,
+                        );
                       } else {
                         context.go(Routes.login);
                       }

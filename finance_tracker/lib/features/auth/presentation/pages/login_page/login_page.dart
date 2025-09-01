@@ -46,18 +46,18 @@ class _LoginPageState extends State<LoginPage> {
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 prefixIconPath: context.appSvgs.icPerson,
-                hintText: "Email",
+                hintText: AppLocaleKeys.email,
               ),
-              20.h,
+              20.verticalSpace,
               AppTextFormField(
                 controller: _passwordController,
                 keyboardType: TextInputType.visiblePassword,
                 prefixIconPath: context.appSvgs.icPassword,
-                hintText: "Parol",
+                hintText: AppLocaleKeys.password,
               ),
-              24.h,
-              AppButton(onTap: () {}, text: "Kirish"),
-              20.h,
+              24.verticalSpace,
+              AppButton(onTap: () {}, text: AppLocaleKeys.login),
+              10.verticalSpace,
               Align(
                 alignment: AlignmentGeometry.centerRight,
                 child: TextButton(
@@ -71,14 +71,18 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              20.h,
+              20.verticalSpace,
               AppButton(
                 onTap: () {
                   context.go(Routes.register);
                 },
+                enableShadow: false,
                 borderColor: AppColors.c0E33F3,
-                text: "Ro'yhatdan o'tish",
-                backgroundColor: AppColors.c0E33F3.newWithOpacity(.3),
+                text: AppLocaleKeys.register,
+                backgroundColor: AppColors.cTransparent,
+                textStyle: context.textStyle.boardingTitle.copyWith(
+                  fontSize: 16,
+                ),
               ),
             ],
           ).paddingSymmetric(horizontal: 24),
