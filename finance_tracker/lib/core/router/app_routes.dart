@@ -1,6 +1,7 @@
 import 'package:finance_tracker/features/auth/presentation/pages/forgot_password_page/forgot_password_page.dart';
 import 'package:finance_tracker/features/auth/presentation/pages/login_page/login_page.dart';
 import 'package:finance_tracker/features/auth/presentation/pages/register_page/register_page.dart';
+import 'package:finance_tracker/features/auth/presentation/pages/update_password_success_page/update_password_success_page.dart';
 import 'package:flutter/cupertino.dart';
 import '../../exports.dart';
 import '../../features/onboarding/presentation/pages/onboarding_page/onboarding_page.dart';
@@ -33,6 +34,12 @@ abstract class AppRoutes {
         path: Routes.forgotPassword,
         pageBuilder:
             (context, state) => CupertinoPage(child: ForgotPasswordPage()),
+      ),
+      GoRoute(
+        path: Routes.updatePasswordSuccess,
+        pageBuilder:
+            (context, state) =>
+                CupertinoPage(child: UpdatePasswordSuccessPage()),
       ),
     ],
   );

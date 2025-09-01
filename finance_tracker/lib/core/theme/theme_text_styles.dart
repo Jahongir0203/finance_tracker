@@ -8,6 +8,9 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
   final TextStyle forgotPasswordTitle;
   final TextStyle forgotPasswordBody;
 
+  ///Medium
+  final TextStyle passwordUpdateTitle;
+
   ///SemiBold
   final TextStyle boardingTitle;
   final TextStyle buttonTitle;
@@ -54,6 +57,14 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       color: AppColors.c9BA1A8,
     ),
 
+
+    ///Medium
+    passwordUpdateTitle: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w500,
+      fontFamily: AppLocaleKeys.fontMedium,
+      color: AppColors.c242D35,
+    ),
     ///SemiBold
     boardingTitle: TextStyle(
       fontWeight: FontWeight.w600,
@@ -126,6 +137,14 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       color: AppColors.cB0B8BF,
     ),
 
+    ///Medium
+    passwordUpdateTitle: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w500,
+      fontFamily: AppLocaleKeys.fontMedium,
+      color: AppColors.cF5F6F7,
+    ),
+
     ///SemiBold
     boardingTitle: TextStyle(
       fontWeight: FontWeight.w600,
@@ -173,6 +192,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     required this.textField,
     required this.forgotPasswordTitle,
     required this.forgotPasswordBody,
+    required this.passwordUpdateTitle,
   });
 
   @override
@@ -187,6 +207,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     TextStyle? textField,
     TextStyle? forgotPasswordTitle,
     TextStyle? forgotPasswordBody,
+    TextStyle? passwordUpdateTitle,
   }) {
     return ThemeTextStyles(
       splashTitle: splashTitle ?? this.splashTitle,
@@ -199,6 +220,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       textField: textField ?? this.textField,
       forgotPasswordBody: forgotPasswordBody ?? this.forgotPasswordBody,
       forgotPasswordTitle: forgotPasswordTitle ?? this.forgotPasswordTitle,
+      passwordUpdateTitle: passwordUpdateTitle ?? this.passwordUpdateTitle,
     );
   }
 
@@ -224,6 +246,8 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
           TextStyle.lerp(forgotPasswordTitle, other.forgotPasswordTitle, t)!,
       forgotPasswordBody:
           TextStyle.lerp(forgotPasswordBody, other.forgotPasswordBody, t)!,
+      passwordUpdateTitle:
+          TextStyle.lerp(passwordUpdateTitle, other.passwordUpdateTitle, t)!,
     );
   }
 }

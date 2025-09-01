@@ -9,6 +9,8 @@ abstract class AppLightSvgs {
   static const String icVisibility = '$baseUrl/ic_visibility.svg';
   static const String icVisibilityOff = '$baseUrl/ic_visibility_off.svg';
   static const String icBack= '$baseUrl/ic_back.svg';
+  static const String icIllustration= '$baseUrl/ic_illustration.svg';
+
 }
 
 abstract class AppDarkSvgs {
@@ -22,5 +24,7 @@ abstract class AppDarkSvgs {
   static const String icVisibility = '$baseUrl/ic_visibility.svg';
   static const String icVisibilityOff = '$baseUrl/ic_visibility_off.svg';
   static const String icBack = '$baseUrl/ic_back.svg';
+  static const String icIllustration= '$baseUrl/ic_illustration.svg';
+
 
 }

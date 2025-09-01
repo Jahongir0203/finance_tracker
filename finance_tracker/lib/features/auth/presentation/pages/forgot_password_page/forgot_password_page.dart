@@ -95,7 +95,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       children: [
                         AppButton(
                           onTap: () {
-                            if (_formKey.currentState!.validate()) {}
+                            if (_formKey.currentState!.validate()) {
+                              context.push(Routes.updatePasswordSuccess);
+                            }
                           },
                           text: "Parolni qayat tiklash",
                         ),

@@ -4,4 +4,5 @@ abstract class Routes {
   static const String register = '/register';
   static const String login = '/login';
   static const String forgotPassword = '/forgot-password';
+  static const String updatePasswordSuccess = '/update-password-success';
 }
