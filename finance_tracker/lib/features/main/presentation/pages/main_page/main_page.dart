@@ -1,3 +1,9 @@
+import 'package:finance_tracker/features/add_expense/presentation/pages/add_expenses_page/add_expenses_page.dart';
+import 'package:finance_tracker/features/expenses/presentation/pages/expenses_page/expenses_page.dart';
+import 'package:finance_tracker/features/home/presentation/pages/home_page/home_page.dart';
+import 'package:finance_tracker/features/main/presentation/pages/main_page/widgets/scale_indexed_stack.dart';
+import 'package:finance_tracker/features/profile/presentation/pages/profile_pages/profile_pages.dart';
+import 'package:finance_tracker/features/statistics/presentation/pages/statistics_page/statistics_page.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -13,10 +19,23 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int index = 0;
 
+  List<Widget> pages = const [
+    HomePage(),
+    ExpensesPage(),
+    AddExpensesPage(),
+    StatisticsPage(),
+    ProfilePages(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return WLayout(
       child: Scaffold(
+        body: ScaleIndexedStack(
+          children: pages,
+          index: index,
+          duration: TimeDelayConst.durationMill300,
+        ),
         bottomNavigationBar: FlashyTabBar(
           selectedIndex: index,
           backgroundColor: context.color.scaffoldBg,
