@@ -2,6 +2,7 @@ import 'package:finance_tracker/features/auth/presentation/pages/forgot_password
 import 'package:finance_tracker/features/auth/presentation/pages/login_page/login_page.dart';
 import 'package:finance_tracker/features/auth/presentation/pages/register_page/register_page.dart';
 import 'package:finance_tracker/features/auth/presentation/pages/update_password_success_page/update_password_success_page.dart';
+import 'package:finance_tracker/features/main/presentation/pages/main_page/main_page.dart';
 import 'package:flutter/cupertino.dart';
 import '../../exports.dart';
 import '../../features/onboarding/presentation/pages/onboarding_page/onboarding_page.dart';
@@ -11,7 +12,7 @@ final navigatorKey = GlobalKey<NavigatorState>();
 
 abstract class AppRoutes {
   static GoRouter router = GoRouter(
-    initialLocation: Routes.splash,
+    initialLocation: Routes.main,
     navigatorKey: navigatorKey,
     routes: [
       GoRoute(
@@ -40,6 +41,10 @@ abstract class AppRoutes {
         pageBuilder:
             (context, state) =>
                 CupertinoPage(child: UpdatePasswordSuccessPage()),
+      ),
+      GoRoute(
+        path: Routes.main,
+        pageBuilder: (context, state) => CupertinoPage(child: MainPage()),
       ),
     ],
   );

@@ -17,6 +17,7 @@ dependencies:
 
   #ui
   top_snackbar_flutter: ^3.3.0
+  flashy_tab_bar2: ^0.0.10
 
   #state_managment
   equatable: ^2.0.7

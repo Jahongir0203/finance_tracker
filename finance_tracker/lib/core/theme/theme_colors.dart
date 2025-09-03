@@ -5,12 +5,14 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color gradient1;
   final Color gradient2;
   final Color indicatorColor;
+  final Color navBar;
 
   ThemeColors({
     required this.scaffoldBg,
     required this.gradient1,
     required this.gradient2,
     required this.indicatorColor,
+    required this.navBar,
   });
 
   static ThemeColors light = ThemeColors(
@@ -18,12 +20,14 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     gradient1: AppColors.c2FDAFF,
     gradient2: AppColors.c0E33F3,
     indicatorColor: AppColors.cEBEEF0,
+    navBar: AppColors.cFFFFFF.newWithOpacity(.5),
   );
   static ThemeColors dark = ThemeColors(
     scaffoldBg: AppColors.c0F1B26,
     gradient1: AppColors.c2F51FF,
     gradient2: AppColors.c0E33F3,
     indicatorColor: AppColors.c3E4C59,
+    navBar: AppColors.c0F1B26.newWithOpacity(.5),
   );
 
   @override
@@ -32,12 +36,14 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? gradient1,
     Color? gradient2,
     Color? indicatorColor,
+    Color? navBar,
   }) {
     return ThemeColors(
       scaffoldBg: scaffoldBg ?? this.scaffoldBg,
       gradient1: gradient1 ?? this.gradient1,
       gradient2: gradient2 ?? this.gradient2,
       indicatorColor: indicatorColor ?? this.indicatorColor,
+      navBar: navBar ?? this.navBar,
     );
   }
 
@@ -55,6 +61,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       gradient1: Color.lerp(gradient1, other.gradient1, t)!,
       gradient2: Color.lerp(gradient2, other.gradient2, t)!,
       indicatorColor: Color.lerp(indicatorColor, other.indicatorColor, t)!,
+      navBar: Color.lerp(navBar, other.navBar, t)!,
     );
   }
 }
