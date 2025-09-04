@@ -1,9 +1,11 @@
-import 'package:finance_tracker/core/constants/app_locale_keys.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'exports.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   FlutterNativeSplash.remove();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: AppTheme.darkTheme,
       theme: AppTheme.lightTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       routerConfig: AppRoutes.router,
     );
   }
