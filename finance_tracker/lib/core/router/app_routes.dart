@@ -12,7 +12,7 @@ final navigatorKey = GlobalKey<NavigatorState>();
 
 abstract class AppRoutes {
   static GoRouter router = GoRouter(
-    initialLocation: Routes.main,
+    initialLocation: Routes.splash,
     navigatorKey: navigatorKey,
     routes: [
       GoRoute(

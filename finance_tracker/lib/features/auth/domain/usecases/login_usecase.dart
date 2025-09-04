@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:finance_tracker/core/core.dart';
+import 'package:finance_tracker/exports.dart';
 import 'package:finance_tracker/features/auth/domain/repository/auth_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+@injectable
 class LoginUseCase
     implements UseCase<Either<Failure, UserCredential>, LoginUseCaseParams> {
   final AuthRepository _authRepository;

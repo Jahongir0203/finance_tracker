@@ -9,6 +9,7 @@ class AppButton extends StatelessWidget {
     this.borderColor,
     this.textStyle,
     this.enableShadow = true,
+    this.isLoading = false,
   });
 
   final VoidCallback onTap;
@@ -17,6 +18,7 @@ class AppButton extends StatelessWidget {
   final Color? borderColor;
   final TextStyle? textStyle;
   final bool enableShadow;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +43,14 @@ class AppButton extends StatelessWidget {
                   : [],
         ),
         child: Center(
-          child: Text(
-            text,
-            textAlign: TextAlign.center,
-            style: textStyle ?? context.textStyle.buttonTitle,
-          ),
+          child:
+              isLoading
+                  ? SizedBox(child: CircularProgressIndicator.adaptive())
+                  : Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: textStyle ?? context.textStyle.buttonTitle,
+                  ),
         ),
       ),
     );

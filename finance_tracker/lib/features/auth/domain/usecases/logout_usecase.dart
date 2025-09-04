@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:finance_tracker/core/core.dart';
+import 'package:finance_tracker/exports.dart';
 import 'package:finance_tracker/features/auth/domain/repository/auth_repository.dart';
-
+@injectable
 class LogOutUseCase implements UseCase<Either<Failure, void>, NoParams> {
   final AuthRepository _authRepository;
 
