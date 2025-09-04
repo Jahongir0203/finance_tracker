@@ -12,6 +12,8 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
+import '../../features/main/presentation/blocs/main_bloc/main_bloc.dart'
+    as _i784;
 import '../../features/onboarding/presentation/blocs/splash_bloc/splash_bloc.dart'
     as _i861;
 
@@ -22,6 +24,7 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    gh.factory<_i784.MainBloc>(() => _i784.MainBloc());
     gh.factory<_i861.SplashBloc>(() => _i861.SplashBloc());
     return this;
   }
