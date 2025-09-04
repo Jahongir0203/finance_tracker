@@ -30,6 +30,8 @@ dependencies:
   mask_text_input_formatter: ^2.9.0
   flutter_svg: ^2.2.0
   flutter_native_splash: ^2.4.6
+  path_provider: ^2.1.5
+
 
   #firebase
   firebase_core: ^4.1.0
@@ -47,6 +49,10 @@ dependencies:
 
   #network
   dio: ^5.9.0
+
+  #storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
