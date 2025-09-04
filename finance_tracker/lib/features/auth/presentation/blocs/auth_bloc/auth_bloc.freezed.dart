@@ -55,12 +55,13 @@ extension AuthEventPatterns on AuthEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _LogIn value)?  logIn,TResult Function( _Register value)?  register,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _LogIn value)?  logIn,TResult Function( _Register value)?  register,TResult Function( _Update value)?  update,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _LogIn() when logIn != null:
 return logIn(_that);case _Register() when register != null:
-return register(_that);case _:
+return register(_that);case _Update() when update != null:
+return update(_that);case _:
   return orElse();
 
 }
@@ -78,12 +79,13 @@ return register(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _LogIn value)  logIn,required TResult Function( _Register value)  register,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _LogIn value)  logIn,required TResult Function( _Register value)  register,required TResult Function( _Update value)  update,}){
 final _that = this;
 switch (_that) {
 case _LogIn():
 return logIn(_that);case _Register():
-return register(_that);case _:
+return register(_that);case _Update():
+return update(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -100,12 +102,13 @@ return register(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _LogIn value)?  logIn,TResult? Function( _Register value)?  register,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _LogIn value)?  logIn,TResult? Function( _Register value)?  register,TResult? Function( _Update value)?  update,}){
 final _that = this;
 switch (_that) {
 case _LogIn() when logIn != null:
 return logIn(_that);case _Register() when register != null:
-return register(_that);case _:
+return register(_that);case _Update() when update != null:
+return update(_that);case _:
   return null;
 
 }
@@ -122,11 +125,12 @@ return register(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LoginUseCaseParams params)?  logIn,TResult Function( RegisterUSeCaseParams params)?  register,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LoginUseCaseParams params)?  logIn,TResult Function( RegisterUSeCaseParams params)?  register,TResult Function( UpdatePasswordUseCaseParams params)?  update,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LogIn() when logIn != null:
 return logIn(_that.params);case _Register() when register != null:
-return register(_that.params);case _:
+return register(_that.params);case _Update() when update != null:
+return update(_that.params);case _:
   return orElse();
 
 }
@@ -144,11 +148,12 @@ return register(_that.params);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LoginUseCaseParams params)  logIn,required TResult Function( RegisterUSeCaseParams params)  register,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LoginUseCaseParams params)  logIn,required TResult Function( RegisterUSeCaseParams params)  register,required TResult Function( UpdatePasswordUseCaseParams params)  update,}) {final _that = this;
 switch (_that) {
 case _LogIn():
 return logIn(_that.params);case _Register():
-return register(_that.params);case _:
+return register(_that.params);case _Update():
+return update(_that.params);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -165,11 +170,12 @@ return register(_that.params);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LoginUseCaseParams params)?  logIn,TResult? Function( RegisterUSeCaseParams params)?  register,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LoginUseCaseParams params)?  logIn,TResult? Function( RegisterUSeCaseParams params)?  register,TResult? Function( UpdatePasswordUseCaseParams params)?  update,}) {final _that = this;
 switch (_that) {
 case _LogIn() when logIn != null:
 return logIn(_that.params);case _Register() when register != null:
-return register(_that.params);case _:
+return register(_that.params);case _Update() when update != null:
+return update(_that.params);case _:
   return null;
 
 }
@@ -310,9 +316,75 @@ as RegisterUSeCaseParams,
 }
 
 /// @nodoc
+
+
+class _Update implements AuthEvent {
+  const _Update({required this.params});
+  
+
+@override final  UpdatePasswordUseCaseParams params;
+
+/// Create a copy of AuthEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UpdateCopyWith<_Update> get copyWith => __$UpdateCopyWithImpl<_Update>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Update&&(identical(other.params, params) || other.params == params));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,params);
+
+@override
+String toString() {
+  return 'AuthEvent.update(params: $params)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UpdateCopyWith<$Res> implements $AuthEventCopyWith<$Res> {
+  factory _$UpdateCopyWith(_Update value, $Res Function(_Update) _then) = __$UpdateCopyWithImpl;
+@useResult
+$Res call({
+ UpdatePasswordUseCaseParams params
+});
+
+
+
+
+}
+/// @nodoc
+class __$UpdateCopyWithImpl<$Res>
+    implements _$UpdateCopyWith<$Res> {
+  __$UpdateCopyWithImpl(this._self, this._then);
+
+  final _Update _self;
+  final $Res Function(_Update) _then;
+
+/// Create a copy of AuthEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? params = null,}) {
+  return _then(_Update(
+params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
+as UpdatePasswordUseCaseParams,
+  ));
+}
+
+
+}
+
+/// @nodoc
 mixin _$AuthState {
 
- RequestStatus get loginSt; RequestStatus get registerSt;
+ RequestStatus get loginSt; RequestStatus get registerSt; RequestStatus get updateSt; String? get errorText;
 /// Create a copy of AuthState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -323,16 +395,16 @@ $AuthStateCopyWith<AuthState> get copyWith => _$AuthStateCopyWithImpl<AuthState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthState&&(identical(other.loginSt, loginSt) || other.loginSt == loginSt)&&(identical(other.registerSt, registerSt) || other.registerSt == registerSt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthState&&(identical(other.loginSt, loginSt) || other.loginSt == loginSt)&&(identical(other.registerSt, registerSt) || other.registerSt == registerSt)&&(identical(other.updateSt, updateSt) || other.updateSt == updateSt)&&(identical(other.errorText, errorText) || other.errorText == errorText));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,loginSt,registerSt);
+int get hashCode => Object.hash(runtimeType,loginSt,registerSt,updateSt,errorText);
 
 @override
 String toString() {
-  return 'AuthState(loginSt: $loginSt, registerSt: $registerSt)';
+  return 'AuthState(loginSt: $loginSt, registerSt: $registerSt, updateSt: $updateSt, errorText: $errorText)';
 }
 
 
@@ -343,7 +415,7 @@ abstract mixin class $AuthStateCopyWith<$Res>  {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) _then) = _$AuthStateCopyWithImpl;
 @useResult
 $Res call({
- RequestStatus loginSt, RequestStatus registerSt
+ RequestStatus loginSt, RequestStatus registerSt, RequestStatus updateSt, String? errorText
 });
 
 
@@ -360,11 +432,13 @@ class _$AuthStateCopyWithImpl<$Res>
 
 /// Create a copy of AuthState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? loginSt = null,Object? registerSt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? loginSt = null,Object? registerSt = null,Object? updateSt = null,Object? errorText = freezed,}) {
   return _then(_self.copyWith(
 loginSt: null == loginSt ? _self.loginSt : loginSt // ignore: cast_nullable_to_non_nullable
 as RequestStatus,registerSt: null == registerSt ? _self.registerSt : registerSt // ignore: cast_nullable_to_non_nullable
-as RequestStatus,
+as RequestStatus,updateSt: null == updateSt ? _self.updateSt : updateSt // ignore: cast_nullable_to_non_nullable
+as RequestStatus,errorText: freezed == errorText ? _self.errorText : errorText // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -449,10 +523,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( RequestStatus loginSt,  RequestStatus registerSt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( RequestStatus loginSt,  RequestStatus registerSt,  RequestStatus updateSt,  String? errorText)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AuthState() when $default != null:
-return $default(_that.loginSt,_that.registerSt);case _:
+return $default(_that.loginSt,_that.registerSt,_that.updateSt,_that.errorText);case _:
   return orElse();
 
 }
@@ -470,10 +544,10 @@ return $default(_that.loginSt,_that.registerSt);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( RequestStatus loginSt,  RequestStatus registerSt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( RequestStatus loginSt,  RequestStatus registerSt,  RequestStatus updateSt,  String? errorText)  $default,) {final _that = this;
 switch (_that) {
 case _AuthState():
-return $default(_that.loginSt,_that.registerSt);case _:
+return $default(_that.loginSt,_that.registerSt,_that.updateSt,_that.errorText);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -490,10 +564,10 @@ return $default(_that.loginSt,_that.registerSt);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( RequestStatus loginSt,  RequestStatus registerSt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( RequestStatus loginSt,  RequestStatus registerSt,  RequestStatus updateSt,  String? errorText)?  $default,) {final _that = this;
 switch (_that) {
 case _AuthState() when $default != null:
-return $default(_that.loginSt,_that.registerSt);case _:
+return $default(_that.loginSt,_that.registerSt,_that.updateSt,_that.errorText);case _:
   return null;
 
 }
@@ -505,11 +579,13 @@ return $default(_that.loginSt,_that.registerSt);case _:
 
 
 class _AuthState implements AuthState {
-  const _AuthState({this.loginSt = RequestStatus.initial, this.registerSt = RequestStatus.initial});
+  const _AuthState({this.loginSt = RequestStatus.initial, this.registerSt = RequestStatus.initial, this.updateSt = RequestStatus.initial, this.errorText = null});
   
 
 @override@JsonKey() final  RequestStatus loginSt;
 @override@JsonKey() final  RequestStatus registerSt;
+@override@JsonKey() final  RequestStatus updateSt;
+@override@JsonKey() final  String? errorText;
 
 /// Create a copy of AuthState
 /// with the given fields replaced by the non-null parameter values.
@@ -521,16 +597,16 @@ _$AuthStateCopyWith<_AuthState> get copyWith => __$AuthStateCopyWithImpl<_AuthSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AuthState&&(identical(other.loginSt, loginSt) || other.loginSt == loginSt)&&(identical(other.registerSt, registerSt) || other.registerSt == registerSt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AuthState&&(identical(other.loginSt, loginSt) || other.loginSt == loginSt)&&(identical(other.registerSt, registerSt) || other.registerSt == registerSt)&&(identical(other.updateSt, updateSt) || other.updateSt == updateSt)&&(identical(other.errorText, errorText) || other.errorText == errorText));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,loginSt,registerSt);
+int get hashCode => Object.hash(runtimeType,loginSt,registerSt,updateSt,errorText);
 
 @override
 String toString() {
-  return 'AuthState(loginSt: $loginSt, registerSt: $registerSt)';
+  return 'AuthState(loginSt: $loginSt, registerSt: $registerSt, updateSt: $updateSt, errorText: $errorText)';
 }
 
 
@@ -541,7 +617,7 @@ abstract mixin class _$AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Re
   factory _$AuthStateCopyWith(_AuthState value, $Res Function(_AuthState) _then) = __$AuthStateCopyWithImpl;
 @override @useResult
 $Res call({
- RequestStatus loginSt, RequestStatus registerSt
+ RequestStatus loginSt, RequestStatus registerSt, RequestStatus updateSt, String? errorText
 });
 
 
@@ -558,11 +634,13 @@ class __$AuthStateCopyWithImpl<$Res>
 
 /// Create a copy of AuthState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? loginSt = null,Object? registerSt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? loginSt = null,Object? registerSt = null,Object? updateSt = null,Object? errorText = freezed,}) {
   return _then(_AuthState(
 loginSt: null == loginSt ? _self.loginSt : loginSt // ignore: cast_nullable_to_non_nullable
 as RequestStatus,registerSt: null == registerSt ? _self.registerSt : registerSt // ignore: cast_nullable_to_non_nullable
-as RequestStatus,
+as RequestStatus,updateSt: null == updateSt ? _self.updateSt : updateSt // ignore: cast_nullable_to_non_nullable
+as RequestStatus,errorText: freezed == errorText ? _self.errorText : errorText // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

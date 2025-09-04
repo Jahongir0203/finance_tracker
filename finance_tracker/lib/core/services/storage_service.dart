@@ -14,8 +14,16 @@ class StorageService {
     await _box.put(_StorageKeys.themeMode, isLightMode);
   }
 
+  Future<void> setOnboarding(bool value) async {
+    await _box.put(_StorageKeys.onBoarding, value);
+  }
+
   Future<bool> getTheme() async {
     return await _box.get(_StorageKeys.themeMode, defaultValue: true);
+  }
+
+  Future<bool> getOnBoarding() async {
+    return await _box.get(_StorageKeys.onBoarding, defaultValue: false);
   }
 
   Future<void> clearAll() async {
@@ -25,4 +33,5 @@ class StorageService {
 
 abstract class _StorageKeys {
   static const String themeMode = 'themeMode';
+  static const String onBoarding = 'onBoarding';
 }

@@ -32,7 +32,7 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, void>> logOut() async {
     try {
       await _authDataSource.logOut();
-      return Right(null);
+      return Right(unit);
     } on FirebaseAuthException catch (e) {
       return Left(Failure(message: e.message));
     } catch (e) {
@@ -54,6 +54,20 @@ class AuthRepositoryImpl implements AuthRepository {
       );
 
       return Right(user);
+    } on FirebaseAuthException catch (e) {
+      return Left(Failure(message: e.message));
+    } catch (e) {
+      return Left(Failure(message: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> updatePassword({
+    required String password,
+  }) async {
+    try {
+      await _authDataSource.updatePassword(password: password);
+      return Right(unit);
     } on FirebaseAuthException catch (e) {
       return Left(Failure(message: e.message));
     } catch (e) {

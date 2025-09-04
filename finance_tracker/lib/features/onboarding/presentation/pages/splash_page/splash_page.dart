@@ -41,6 +41,10 @@ class _SplashPageState extends State<SplashPage>
       child: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
           if (state.status.isLoaded()) {
+            context.go(Routes.main);
+          } else if (state.status.isLoadingMore()) {
+            context.go(Routes.login);
+          } else if (state.status.isWarning()) {
             context.go(Routes.onBoarding);
           }
         },

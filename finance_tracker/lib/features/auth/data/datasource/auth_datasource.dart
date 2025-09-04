@@ -13,6 +13,8 @@ abstract class AuthDataSource {
     required String password,
   });
 
+  Future<void> updatePassword({required String password});
+
   Future<void> logOut();
 }
 
@@ -30,6 +32,7 @@ class AuthDataSourceImpl extends AuthDataSource {
       email: email,
       password: password,
     );
+    firebaseInstance.currentUser?.updateDisplayName(name);
 
     return request;
   }
@@ -50,5 +53,10 @@ class AuthDataSourceImpl extends AuthDataSource {
   @override
   Future<void> logOut() async {
     await firebaseInstance.signOut();
+  }
+
+  @override
+  Future<void> updatePassword({required String password}) async {
+    await firebaseInstance.currentUser?.updatePassword(password);
   }
 }

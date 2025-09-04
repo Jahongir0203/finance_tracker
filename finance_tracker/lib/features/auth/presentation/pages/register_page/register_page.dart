@@ -16,11 +16,13 @@ class _RegisterPageState extends State<RegisterPage> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
   late TextEditingController _repeatPasswordController;
+  late TextEditingController _nameController;
 
   final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
+    _nameController = TextEditingController();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     _repeatPasswordController = TextEditingController();
@@ -29,6 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   void dispose() {
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _repeatPasswordController.dispose();
@@ -39,7 +42,21 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<AuthBloc>(),
-      child: BlocBuilder<AuthBloc, AuthState>(
+      child: BlocConsumer<AuthBloc, AuthState>(
+        listenWhen:
+            (previous, current) => previous.registerSt != current.registerSt,
+        listener: (context, state) {
+          if (state.registerSt.isLoaded()) {
+            showSuccessToast(
+              "Ro'yhatdan o'tish muvaffaqiyatli amalga oshirildi!",
+            );
+            context.go(Routes.main);
+          }
+
+          if (state.registerSt.isError()) {
+            showErrorToast(state.errorText);
+          }
+        },
         builder: (context, state) {
           return WLayout(
             child: Scaffold(
@@ -51,16 +68,16 @@ class _RegisterPageState extends State<RegisterPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     AuthHeader(),
-                    // AppTextFormField(
-                    //   controller: _emailController,
-                    //   keyboardType: TextInputType.text,
-                    //   prefixIconPath: context.appSvgs.icPerson,
-                    //   hintText: AppLocaleKeys.email,
-                    //   validator: (value) {
-                    //     return ValidatorHelpers.validateEmail(value: value!);
-                    //   },
-                    // ),
-                    // 20.verticalSpace,
+                    AppTextFormField(
+                      controller: _nameController,
+                      keyboardType: TextInputType.text,
+                      prefixIconPath: context.appSvgs.icPerson,
+                      hintText: AppLocaleKeys.name,
+                      validator: (value) {
+                        return ValidatorHelpers.validateField(value: value!);
+                      },
+                    ),
+                    20.verticalSpace,
                     AppTextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -102,7 +119,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           context.read<AuthBloc>().add(
                             AuthEvent.register(
                               params: RegisterUSeCaseParams(
-                                '',
+                                _nameController.text.trim(),
                                 _emailController.text.trim(),
                                 _passwordController.text.trim(),
                               ),

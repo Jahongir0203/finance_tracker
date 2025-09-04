@@ -1,6 +1,13 @@
 import 'package:finance_tracker/core/constants/app_locale_keys.dart';
 
 abstract class ValidatorHelpers {
+  static String? validateField({required String value}) {
+    if (value.toString().trim().isEmpty) {
+      return AppLocaleKeys.strCanNotBeEmpty;
+    }
+    return null;
+  }
+
   static String? validateEmail({required String value, message}) {
     final RegExp emailRegExp = RegExp(
       r"^[a-zA-Z0-9.a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+",

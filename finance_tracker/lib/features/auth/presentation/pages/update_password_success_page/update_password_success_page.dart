@@ -42,7 +42,7 @@ class UpdatePasswordSuccessPage extends StatelessWidget {
             ),
             AppButton(
               onTap: () => context.go(Routes.login),
-              text: "Back to login",
+              text: "Kirishga qaytish",
             ).paddingSymmetric(horizontal: 24),
             30.verticalSpace,
           ],

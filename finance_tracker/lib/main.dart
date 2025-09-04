@@ -1,6 +1,7 @@
 import 'package:finance_tracker/features/common/presentation/blocs/theme_bloc/theme_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:toastification/toastification.dart';
 
 import 'exports.dart';
 import 'firebase_options.dart';
@@ -26,13 +27,15 @@ class MyApp extends StatelessWidget {
       create: (context) => getIt<ThemeBloc>()..add(ThemeEvent.loaded()),
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
-          return MaterialApp.router(
-            title: AppLocaleKeys.monex,
-            debugShowCheckedModeBanner: false,
-            darkTheme: AppTheme.darkTheme,
-            theme: AppTheme.lightTheme,
-            themeMode: state.themeMode,
-            routerConfig: AppRoutes.router,
+          return ToastificationWrapper(
+            child: MaterialApp.router(
+              title: AppLocaleKeys.monex,
+              debugShowCheckedModeBanner: false,
+              darkTheme: AppTheme.darkTheme,
+              theme: AppTheme.lightTheme,
+              themeMode: state.themeMode,
+              routerConfig: AppRoutes.router,
+            ),
           );
         },
       ),

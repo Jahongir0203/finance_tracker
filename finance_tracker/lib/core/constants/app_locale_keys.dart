@@ -4,7 +4,7 @@ abstract class AppLocaleKeys {
   static const String fontMedium = 'fontMedium';
   static const String fontSemiBold = 'fontSemiBold';
   static const String fontBold = 'fontBold';
-
+  static const String name = 'Ism';
   static const String email = 'Email';
   static const String password = 'Parol';
   static const String repeatPassword = 'Parolni qayta kiriting';
@@ -16,4 +16,5 @@ abstract class AppLocaleKeys {
   static const String pasBeAtLEast8 =
       "Parol kamida 8 ta belgidan iborat bo‘lishi majburiy";
   static const String pasNotEqual = "Parol mos kelmadi";
+  static const String unExpectedError = "Nimadir noto'gri ketdi";
 }

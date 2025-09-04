@@ -35,7 +35,20 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<AuthBloc>(),
-      child: BlocBuilder<AuthBloc, AuthState>(
+      child: BlocConsumer<AuthBloc, AuthState>(
+        listenWhen: (previous, current) => previous.loginSt != current.loginSt,
+        listener: (context, state) {
+          if (state.loginSt.isLoaded()) {
+            showSuccessToast(
+              "Profilga kirish muvaffaqiyatli amalga oshirildi!",
+            );
+            context.go(Routes.main);
+          }
+
+          if (state.loginSt.isError()) {
+            showErrorToast(state.errorText);
+          }
+        },
         builder: (context, state) {
           return WLayout(
             child: Scaffold(
