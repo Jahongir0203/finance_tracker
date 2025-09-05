@@ -17,7 +17,7 @@ class WProfileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {},
+      onTap: onTap,
       leading: Icon(icon, color: AppColors.c0E33F3, size: 28),
       tileColor: context.color.cardColor,
       style: ListTileStyle.list,

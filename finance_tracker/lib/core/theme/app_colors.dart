@@ -2,6 +2,7 @@ import 'package:finance_tracker/exports.dart';
 
 abstract class AppColors {
   static const Color cTransparent = Colors.transparent;
+  static const Color cGrey = Colors.grey;
 
   static const Color cFFFFFF = Color(0xFFFFFFFF);
   static const Color c000000 = Color(0xFF000000);
@@ -20,4 +21,7 @@ abstract class AppColors {
   static const Color cEF4E4E = Color(0xFFDCDFE3);
   static const Color c9BA1A8 = Color(0xFF9BA1A8);
   static const Color c3EBD93 = Color(0xFF3EBD93);
+  static const Color c1F2933 = Color(0xFF1F2933);
+  static const Color c1A2A38= Color(0xFF1A2A38);
+
 }
