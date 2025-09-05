@@ -6,3 +6,4 @@ export 'w_snack_bar.dart';
 export 'app_bottom_sheet.dart';
 export 'w_decorated_bottom_container.dart';
 export 'app_radio_box.dart';
+export 'w_app_bar.dart';

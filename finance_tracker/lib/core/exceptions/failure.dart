@@ -1,4 +1,3 @@
-
 import '../../exports.dart';
 
 base class Failure extends Equatable {
@@ -8,7 +7,7 @@ base class Failure extends Equatable {
 
   @override
   String toString() {
-    return message ?? "Unexpected error";
+    return message ?? AppLocaleKeys.unExpectedError;
   }
 
   @override

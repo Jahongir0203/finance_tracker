@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
                       size: 24,
                       color: AppColors.cB0B8BF,
                     ),
-                    title: Text("Home"),
+                    title: Text("Umumiy"),
                   ),
                   FlashyTabBarItem(
                     activeColor: AppColors.c0E33F3,
@@ -56,7 +56,7 @@ class MainPage extends StatelessWidget {
                       size: 24,
                       color: AppColors.cB0B8BF,
                     ),
-                    title: Text("Saving"),
+                    title: Text("Xarajatlar"),
                   ),
                   FlashyTabBarItem(
                     activeColor: AppColors.c0E33F3,
@@ -66,7 +66,7 @@ class MainPage extends StatelessWidget {
                       size: 24,
                       color: AppColors.cB0B8BF,
                     ),
-                    title: Text("Add"),
+                    title: Text("Qo'shish"),
                   ),
                   FlashyTabBarItem(
                     activeColor: AppColors.c0E33F3,
@@ -76,7 +76,7 @@ class MainPage extends StatelessWidget {
                       size: 24,
                       color: AppColors.cB0B8BF,
                     ),
-                    title: Text("Bell"),
+                    title: Text("Statistika"),
                   ),
                   FlashyTabBarItem(
                     activeColor: AppColors.c0E33F3,
@@ -86,7 +86,7 @@ class MainPage extends StatelessWidget {
                       size: 24,
                       color: AppColors.cB0B8BF,
                     ),
-                    title: Text("Setting"),
+                    title: Text("Profil"),
                   ),
                 ],
                 onItemSelected: (value) {

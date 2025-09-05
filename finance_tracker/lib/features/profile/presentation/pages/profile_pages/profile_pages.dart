@@ -31,15 +31,19 @@ class ProfilePages extends StatelessWidget {
                 15.verticalSpace,
 
                 WProfileItem(
-                  onTap: () {},
+                  onTap: () {
+                    context.push(Routes.expenseCategory);
+                  },
                   icon: CupertinoIcons.cart_fill,
                   title: "Xarajatlar",
                 ),
-                WProfileItem(
-                  onTap: () {},
-                  icon: CupertinoIcons.creditcard_fill,
-                  title: "Daromadlar",
-                ),
+                // WProfileItem(
+                //   onTap: () {
+                //     context.push(Routes.incomeCategory);
+                //   },
+                //   icon: CupertinoIcons.creditcard_fill,
+                //   title: "Daromadlar",
+                // ),
                 10.verticalSpace,
                 WProfileItem(
                   onTap: () {},
