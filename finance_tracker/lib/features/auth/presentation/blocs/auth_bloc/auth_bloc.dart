@@ -62,7 +62,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(
             state.copyWith(updateSt: RequestStatus.error, errorText: l.message),
           );
-          print(l.message);
         },
         (r) {
           emit(state.copyWith(updateSt: RequestStatus.loaded));

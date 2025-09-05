@@ -22,8 +22,7 @@ class AddExpensesDataSourceImpl extends AddExpensesDataSource {
     await docRef.set(newExpense.toMap());
   }
 
-
-  adddExpense({required ExpensesModel expenses})async{
+  adddExpense({required ExpensesModel expenses}) async {
     final docRef = _expensesRef.doc();
     final newExpense = expenses.copyWith(id: docRef.id);
     await docRef.set(newExpense.toMap());
@@ -32,7 +31,7 @@ class AddExpensesDataSourceImpl extends AddExpensesDataSource {
   Stream<List<ExpensesModel>> getExpenses() {
     return _expensesRef
         .orderBy('date', descending: true)
-        .snapshots()
+        .snapshots(includeMetadataChanges: true)
         .map(
           (snapshot) =>
               snapshot.docs
