@@ -3,6 +3,8 @@ import 'package:finance_tracker/exports.dart';
 abstract class AppColors {
   static const Color cTransparent = Colors.transparent;
   static const Color cGrey = Colors.grey;
+  static const Color cBlue = Colors.blue;
+  static const Color cRed = Colors.red;
 
   static const Color cFFFFFF = Color(0xFFFFFFFF);
   static const Color c000000 = Color(0xFF000000);

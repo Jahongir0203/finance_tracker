@@ -5,6 +5,7 @@ import 'package:finance_tracker/features/auth/presentation/pages/update_password
 import 'package:finance_tracker/features/main/presentation/pages/main_page/main_page.dart';
 import 'package:finance_tracker/features/profile/presentation/pages/expense_categories_page/expense_categories_page.dart';
 import 'package:finance_tracker/features/profile/presentation/pages/income_categories_page/income_categories_page.dart';
+import 'package:finance_tracker/features/profile/presentation/pages/profile_info/profile_info.dart';
 import 'package:flutter/cupertino.dart';
 import '../../exports.dart';
 import '../../features/onboarding/presentation/pages/onboarding_page/onboarding_page.dart';
@@ -52,6 +53,11 @@ abstract class AppRoutes {
         path: Routes.expenseCategory,
         pageBuilder:
             (context, state) => CupertinoPage(child: ExpenseCategoriesPage()),
+      ),
+      GoRoute(
+        path: Routes.profileInfo,
+        pageBuilder:
+            (context, state) => CupertinoPage(child: ProfileInfoPage()),
       ),
       // GoRoute(
       //   path: Routes.incomeCategory,

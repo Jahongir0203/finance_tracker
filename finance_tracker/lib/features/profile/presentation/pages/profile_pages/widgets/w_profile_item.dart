@@ -7,18 +7,20 @@ class WProfileItem extends StatelessWidget {
     required this.icon,
     required this.title,
     this.trailing,
+    this.iconColor,
   });
 
   final VoidCallback onTap;
   final IconData icon;
   final String title;
   final String? trailing;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      leading: Icon(icon, color: AppColors.c0E33F3, size: 28),
+      leading: Icon(icon, color: iconColor??AppColors.c0E33F3, size: 28),
       tileColor: context.color.cardColor,
       style: ListTileStyle.list,
       title: Text(title, style: context.textStyle.listTileTitle),

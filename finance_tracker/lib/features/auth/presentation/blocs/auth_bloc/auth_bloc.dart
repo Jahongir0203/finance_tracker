@@ -2,7 +2,7 @@ import 'package:finance_tracker/exports.dart';
 import 'package:finance_tracker/features/auth/domain/usecases/login_usecase.dart';
 import 'package:finance_tracker/features/auth/domain/usecases/register_usecase.dart';
 import 'package:finance_tracker/features/auth/domain/usecases/update_password_usecase.dart';
-import 'package:finance_tracker/features/common/presentation/widgets/w_snack_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 part 'auth_event.dart';
 

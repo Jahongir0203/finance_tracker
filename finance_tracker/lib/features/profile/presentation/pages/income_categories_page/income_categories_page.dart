@@ -3,7 +3,7 @@ import 'package:finance_tracker/features/common/presentation/mixins/expense_cate
 
 import '../../../../../exports.dart';
 
-//TODO implement
+//TODO implement whatever tests result
 /*
 class IncomeCategoriesPage extends StatelessWidget with ExpenseCategoriesMixin {
 

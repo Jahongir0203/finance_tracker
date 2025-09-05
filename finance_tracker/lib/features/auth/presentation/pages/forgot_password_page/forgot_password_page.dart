@@ -40,7 +40,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         listener: (context, state) {
           if (state.updateSt.isLoaded()) {
             showSuccessToast("Parol muvaffaqiyatli o'zgartirildi!");
-            context.push(Routes.updatePasswordSuccess);
+            context.pop();
           }
 
           if (state.updateSt.isError()) {

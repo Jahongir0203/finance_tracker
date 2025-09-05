@@ -23,7 +23,9 @@ class ProfilePages extends StatelessWidget {
               children: [
                 20.verticalSpace,
                 WProfileItem(
-                  onTap: () {},
+                  onTap: () {
+                    context.push(Routes.profileInfo);
+                  },
                   icon: CupertinoIcons.person_alt,
                   title: "Profil",
                 ),
@@ -37,13 +39,6 @@ class ProfilePages extends StatelessWidget {
                   icon: CupertinoIcons.cart_fill,
                   title: "Xarajatlar",
                 ),
-                // WProfileItem(
-                //   onTap: () {
-                //     context.push(Routes.incomeCategory);
-                //   },
-                //   icon: CupertinoIcons.creditcard_fill,
-                //   title: "Daromadlar",
-                // ),
                 10.verticalSpace,
                 WProfileItem(
                   onTap: () {},
