@@ -12,7 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../exports.dart';
 
 class MainPage extends StatelessWidget {
-  List<Widget> pages = const [
+  List<Widget> pages = [
     HomePage(),
     ExpensesPage(),
     AddExpensesPage(),
