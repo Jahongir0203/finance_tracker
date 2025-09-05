@@ -7,6 +7,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
   final Color indicatorColor;
   final Color navBar;
   final Color navBarIcon;
+  final Color cardColor;
 
   ThemeColors({
     required this.scaffoldBg,
@@ -15,6 +16,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     required this.indicatorColor,
     required this.navBar,
     required this.navBarIcon,
+    required this.cardColor,
   });
 
   static ThemeColors light = ThemeColors(
@@ -24,6 +26,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     indicatorColor: AppColors.cEBEEF0,
     navBar: AppColors.cFFFFFF.newWithOpacity(.5),
     navBarIcon: AppColors.cB0B8BF,
+    cardColor: AppColors.cEBEEF0
   );
   static ThemeColors dark = ThemeColors(
     scaffoldBg: AppColors.c0F1B26,
@@ -32,6 +35,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     indicatorColor: AppColors.c3E4C59,
     navBar: AppColors.c0F1B26.newWithOpacity(.5),
     navBarIcon: AppColors.c3E4C59,
+    cardColor: AppColors.c242D35
   );
 
   @override
@@ -42,6 +46,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
     Color? indicatorColor,
     Color? navBar,
     Color? navBarIcon,
+    Color? cardColor
   }) {
     return ThemeColors(
       scaffoldBg: scaffoldBg ?? this.scaffoldBg,
@@ -50,6 +55,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       indicatorColor: indicatorColor ?? this.indicatorColor,
       navBar: navBar ?? this.navBar,
       navBarIcon: navBarIcon ?? this.navBarIcon,
+      cardColor: cardColor?? this.cardColor
     );
   }
 
@@ -69,6 +75,7 @@ class ThemeColors extends ThemeExtension<ThemeColors> {
       indicatorColor: Color.lerp(indicatorColor, other.indicatorColor, t)!,
       navBar: Color.lerp(navBar, other.navBar, t)!,
       navBarIcon: Color.lerp(navBarIcon, other.navBarIcon, t)!,
+      cardColor: Color.lerp(cardColor, other.cardColor, t)!
     );
   }
 }
