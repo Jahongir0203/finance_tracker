@@ -4,7 +4,7 @@ class ExpensesModel {
   final String? id;
   final double amount;
   final String category;
-  final DateTime date;
+  final String date;
   final String note;
 
   ExpensesModel({
@@ -24,7 +24,7 @@ class ExpensesModel {
       id: id,
       amount: (map['amount'] as num).toDouble(),
       category: map['category'] ?? '',
-      date: (map['date'] as Timestamp).toDate(),
+      date: map['date'] ??'',
       note: map['note'] ?? '',
     );
   }
@@ -33,7 +33,7 @@ class ExpensesModel {
     String? id,
     double? amount,
     String? category,
-    DateTime? date,
+    String? date,
     String? note,
   }) {
     return ExpensesModel(

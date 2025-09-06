@@ -5,6 +5,13 @@ class StatisticsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('statistics')));
+    return Scaffold(
+      body: Center(
+        child: Text(
+          "Development jarayonida",
+          style: context.textStyle.size18Regular,
+        ),
+      ),
+    );
   }
 }

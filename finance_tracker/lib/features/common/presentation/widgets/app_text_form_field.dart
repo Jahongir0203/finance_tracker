@@ -9,6 +9,7 @@ class AppTextFormField extends StatefulWidget {
     this.prefixIconPath,
     this.validator,
     this.obscure = false,
+    this.inputFormatters = const [],
   });
 
   final TextEditingController controller;
@@ -17,6 +18,7 @@ class AppTextFormField extends StatefulWidget {
   final String? prefixIconPath;
   final FormFieldValidator<String>? validator;
   final bool obscure;
+  final List<TextInputFormatter> inputFormatters;
 
   @override
   State<AppTextFormField> createState() => _AppTextFormFieldState();
@@ -32,20 +34,24 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       style: context.textStyle.textField,
+      inputFormatters: widget.inputFormatters,
       validator: widget.validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       obscureText: obscureText,
       decoration: InputDecoration(
         enabled: true,
         hintText: widget.hintText,
-        prefixIcon: SizedBox(
-          height: 24,
-          width: 24,
-          child: SvgPicture.asset(
-            widget.prefixIconPath!,
-            fit: BoxFit.contain,
-          ).paddingAll(3),
-        ).paddingOnly(left: 16, right: 5),
+        prefixIcon:
+            widget.prefixIconPath != null
+                ? SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: SvgPicture.asset(
+                    widget.prefixIconPath!,
+                    fit: BoxFit.contain,
+                  ).paddingAll(3),
+                ).paddingOnly(left: 16, right: 5)
+                : null,
         suffixIcon:
             widget.obscure
                 ? IconButton(

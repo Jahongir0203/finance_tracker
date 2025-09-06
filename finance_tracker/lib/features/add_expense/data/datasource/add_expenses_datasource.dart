@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:finance_tracker/exports.dart';
 import 'package:finance_tracker/features/add_expense/data/models/expenses_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -6,6 +7,7 @@ abstract class AddExpensesDataSource {
   Future<void> addExpenses({required ExpensesModel expenses});
 }
 
+@LazySingleton(as: AddExpensesDataSource)
 class AddExpensesDataSourceImpl extends AddExpensesDataSource {
   final _db = FirebaseFirestore.instance;
   final _auth = FirebaseAuth.instance;
@@ -22,11 +24,11 @@ class AddExpensesDataSourceImpl extends AddExpensesDataSource {
     await docRef.set(newExpense.toMap());
   }
 
-  adddExpense({required ExpensesModel expenses}) async {
-    final docRef = _expensesRef.doc();
-    final newExpense = expenses.copyWith(id: docRef.id);
-    await docRef.set(newExpense.toMap());
-  }
+  // adddExpense({required ExpensesModel expenses}) async {
+  //   final docRef = _expensesRef.doc();
+  //   final newExpense = expenses.copyWith(id: docRef.id);
+  //   await docRef.set(newExpense.toMap());
+  // }
 
   Stream<List<ExpensesModel>> getExpenses() {
     return _expensesRef

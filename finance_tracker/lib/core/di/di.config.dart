@@ -12,6 +12,10 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
+import '../../features/add_expense/data/datasource/add_expenses_datasource.dart'
+    as _i633;
+import '../../features/add_expense/presentation/blocs/add_expenses_bloc/add_expenses_bloc.dart'
+    as _i646;
 import '../../features/auth/data/datasource/auth_datasource.dart' as _i43;
 import '../../features/auth/data/repository/auth_repository_impl.dart' as _i409;
 import '../../features/auth/domain/repository/auth_repository.dart' as _i961;
@@ -56,10 +60,16 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i222.OnBoardingBloc>(() => _i222.OnBoardingBloc());
     gh.factory<_i861.SplashBloc>(() => _i861.SplashBloc());
     gh.singleton<_i306.StorageService>(() => _i306.StorageService());
+    gh.lazySingleton<_i633.AddExpensesDataSource>(
+      () => _i633.AddExpensesDataSourceImpl(),
+    );
     gh.lazySingleton<_i43.AuthDataSource>(() => _i43.AuthDataSourceImpl());
     gh.lazySingleton<_i679.UserDataSource>(() => _i679.UserDataSourceImpl());
     gh.lazySingleton<_i961.AuthRepository>(
       () => _i409.AuthRepositoryImpl(gh<_i43.AuthDataSource>()),
+    );
+    gh.factory<_i646.AddExpensesBloc>(
+      () => _i646.AddExpensesBloc(gh<_i633.AddExpensesDataSource>()),
     );
     gh.lazySingleton<_i532.UserRepository>(
       () => _i313.UserRepositoryImpl(gh<_i679.UserDataSource>()),
