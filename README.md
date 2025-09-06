@@ -83,5 +83,4 @@ Ilovani ishga tushirish:
 # flutter run
 
 Ilovani yuklab olish uchun link
-[Ilovaning Apksi
-](https://drive.google.com/file/d/129QZUlnx_IPX3MhhLJ2gFm9PPsQXSZkh/view)
+(https://drive.google.com/file/d/129QZUlnx_IPX3MhhLJ2gFm9PPsQXSZkh/view)
