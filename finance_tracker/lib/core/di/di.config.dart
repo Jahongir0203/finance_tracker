@@ -30,6 +30,18 @@ import '../../features/onboarding/presentation/blocs/onboarding_bloc/on_boarding
     as _i222;
 import '../../features/onboarding/presentation/blocs/splash_bloc/splash_bloc.dart'
     as _i861;
+import '../../features/profile/data/datasource/user_datasource.dart' as _i679;
+import '../../features/profile/data/repository/user_repository_impl.dart'
+    as _i313;
+import '../../features/profile/domain/repository/user_repository.dart' as _i532;
+import '../../features/profile/domain/usecase/logout_usecase.dart' as _i383;
+import '../../features/profile/domain/usecase/update_password_usecase.dart'
+    as _i208;
+import '../../features/profile/domain/usecase/update_user_usecase.dart'
+    as _i801;
+import '../../features/profile/domain/usecase/user_usecase.dart' as _i289;
+import '../../features/profile/presentation/blocs/user_bloc/user_bloc.dart'
+    as _i69;
 import '../services/storage_service.dart' as _i306;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -45,8 +57,24 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i861.SplashBloc>(() => _i861.SplashBloc());
     gh.singleton<_i306.StorageService>(() => _i306.StorageService());
     gh.lazySingleton<_i43.AuthDataSource>(() => _i43.AuthDataSourceImpl());
+    gh.lazySingleton<_i679.UserDataSource>(() => _i679.UserDataSourceImpl());
     gh.lazySingleton<_i961.AuthRepository>(
       () => _i409.AuthRepositoryImpl(gh<_i43.AuthDataSource>()),
+    );
+    gh.lazySingleton<_i532.UserRepository>(
+      () => _i313.UserRepositoryImpl(gh<_i679.UserDataSource>()),
+    );
+    gh.factory<_i383.LogOutUseCase>(
+      () => _i383.LogOutUseCase(gh<_i532.UserRepository>()),
+    );
+    gh.factory<_i801.UpdateUserUseCase>(
+      () => _i801.UpdateUserUseCase(gh<_i532.UserRepository>()),
+    );
+    gh.factory<_i208.UpdatePassWordUseCase>(
+      () => _i208.UpdatePassWordUseCase(gh<_i532.UserRepository>()),
+    );
+    gh.factory<_i289.UserUseCase>(
+      () => _i289.UserUseCase(gh<_i532.UserRepository>()),
     );
     gh.factory<_i941.RegisterUseCase>(
       () => _i941.RegisterUseCase(gh<_i961.AuthRepository>()),
@@ -65,6 +93,14 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i188.LoginUseCase>(),
         gh<_i941.RegisterUseCase>(),
         gh<_i387.UpdatePasswordUseCase>(),
+      ),
+    );
+    gh.factory<_i69.UserBloc>(
+      () => _i69.UserBloc(
+        gh<_i383.LogOutUseCase>(),
+        gh<_i387.UpdatePasswordUseCase>(),
+        gh<_i801.UpdateUserUseCase>(),
+        gh<_i289.UserUseCase>(),
       ),
     );
     return this;

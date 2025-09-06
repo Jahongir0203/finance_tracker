@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toastification/toastification.dart';
 
 import 'exports.dart';
+import 'features/profile/presentation/blocs/user_bloc/user_bloc.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -23,8 +24,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<ThemeBloc>()..add(ThemeEvent.loaded()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<ThemeBloc>()..add(ThemeEvent.loaded()),
+        ),
+        BlocProvider(create: (context) => getIt<UserBloc>()),
+      ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
           return ToastificationWrapper(

@@ -20,7 +20,7 @@ abstract class AuthDataSource {
 
 @LazySingleton(as: AuthDataSource)
 class AuthDataSourceImpl extends AuthDataSource {
-  FirebaseAuth firebaseInstance = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseInstance = FirebaseAuth.instance;
 
   @override
   Future<UserCredential> registerUser({
@@ -28,11 +28,11 @@ class AuthDataSourceImpl extends AuthDataSource {
     required String name,
     required String password,
   }) async {
-    final request = await firebaseInstance.createUserWithEmailAndPassword(
+    final request = await _firebaseInstance.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
-    firebaseInstance.currentUser?.updateDisplayName(name);
+    _firebaseInstance.currentUser?.updateDisplayName(name);
 
     return request;
   }
@@ -42,7 +42,7 @@ class AuthDataSourceImpl extends AuthDataSource {
     required String email,
     required String password,
   }) async {
-    final request = await firebaseInstance.signInWithEmailAndPassword(
+    final request = await _firebaseInstance.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
@@ -52,11 +52,11 @@ class AuthDataSourceImpl extends AuthDataSource {
 
   @override
   Future<void> logOut() async {
-    await firebaseInstance.signOut();
+    await _firebaseInstance.signOut();
   }
 
   @override
   Future<void> updatePassword({required String password}) async {
-    await firebaseInstance.currentUser?.updatePassword(password);
+    await _firebaseInstance.currentUser?.updatePassword(password);
   }
 }

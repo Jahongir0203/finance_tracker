@@ -10,8 +10,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../exports.dart';
+import '../../../../profile/presentation/blocs/user_bloc/user_bloc.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
   List<Widget> pages = [
     HomePage(),
     ExpensesPage(),
@@ -19,6 +27,12 @@ class MainPage extends StatelessWidget {
     StatisticsPage(),
     ProfilePages(),
   ];
+
+  @override
+  void initState() {
+    context.read<UserBloc>().add(UserEvent.started());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

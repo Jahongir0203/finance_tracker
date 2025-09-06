@@ -6,5 +6,6 @@ abstract class UserState with _$UserState {
     @Default(RequestStatus.initial) RequestStatus editStatus,
     @Default(RequestStatus.initial) RequestStatus updatePasswordStatus,
     @Default(RequestStatus.initial) RequestStatus logOutStatus,
+    @Default(null) User? user
   }) = _UserState;
 }
