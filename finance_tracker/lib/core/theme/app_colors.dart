@@ -1,0 +1,38 @@
+import 'package:finance_tracker/exports.dart';
+
+abstract class AppColors {
+  static const Color cTransparent = Colors.transparent;
+  static const Color cGrey = Colors.grey;
+  static const Color cBlue = Colors.blue;
+  static const Color cRed = Colors.red;
+
+  static const Color cFFFFFF = Color(0xFFFFFFFF);
+  static const Color c000000 = Color(0xFF000000);
+  static const Color c0F1B26 = Color(0xFF0F1B26);
+  static const Color c242D35 = Color(0xFF242D35);
+  static const Color c6B7580 = Color(0xFF6B7580);
+  static const Color c0E33F3 = Color(0xFF0E33F3);
+  static const Color cEBEEF0 = Color(0xFFEBEEF0);
+  static const Color c2FDAFF = Color(0xFF2FDAFF);
+  static const Color cF5F6F7 = Color(0xFFF5F6F7);
+  static const Color cB0B8BF = Color(0xFFB0B8BF);
+  static const Color c3E4C59 = Color(0xFF3E4C59);
+  static const Color c2F51FF = Color(0xFF2F51FF);
+  static const Color c37ABFF = Color(0xFF37ABFF);
+  static const Color cDCDFE3 = Color(0xFFDCDFE3);
+  static const Color cEF4E4E = Color(0xFFDCDFE3);
+  static const Color c9BA1A8 = Color(0xFF9BA1A8);
+  static const Color c3EBD93 = Color(0xFF3EBD93);
+  static const Color c1F2933 = Color(0xFF1F2933);
+  static const Color c1A2A38= Color(0xFF1A2A38);
+  static const Color taxi = Color(0xFFFFD60A);
+  static const Color transport = Color(0xFF32D74B);
+  static const Color food = Color(0xFF007AFF);
+  static const Color diningOut = Color(0xFFFF9500);
+  static const Color health = Color(0xFFFF3B30);
+  static const Color entertainment = Color(0xFF5856D6);
+  static const Color clothing = Color(0xFFFF2D92);
+  static const Color monthlyBills = Color(0xFF5AC8FA);
+  static const Color gifts = Color(0xFFFF6B35);
+
+}
